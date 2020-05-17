@@ -4,8 +4,8 @@ import Carousel from "../components/Carousel";
 import Tabs from "../components/Tabs";
 import ProductCard from "../components/ProductCard";
 import Footer from "../components/Footer";
-import { changeInputUser, doLogout } from "../store/action/userAction";
-import { getProduct } from "../store/action/productAction";
+import { doLogout } from "../store/action/userAction";
+import { getProduct, addToCart } from "../store/action/productAction";
 import { connect } from "react-redux";
 
 class Product extends Component {
@@ -29,7 +29,7 @@ class Product extends Component {
               description={el.description}
               price={el.price}
               created_at={el.created_at}
-              changeInput={this.props.changeInput}
+              addCart={this.props.addCart}
               {...this.props}
             />
           );
@@ -52,6 +52,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   doLogout,
   getProduct,
-  changeInput: (e) => changeInputUser(e),
+  addCart: addToCart,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Product);

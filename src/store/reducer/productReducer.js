@@ -35,6 +35,11 @@ export default function productReducer(state = initialState, action) {
         ...state,
       };
 
+    case "SUCCESS_ADD_CART":
+      return {
+        ...state,
+      };
+
     default:
       return state;
   }

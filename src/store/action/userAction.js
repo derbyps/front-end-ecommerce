@@ -47,7 +47,7 @@ export const doRegister = (props) => {
     };
     const myJSON = JSON.stringify(bodyRequest);
     try {
-      const response = await axios.post(url + "/register", myJSON, {
+      await axios.post(url + "/register", myJSON, {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
           Accept: "application/json; charset=utf-8",

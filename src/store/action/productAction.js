@@ -43,7 +43,7 @@ export const uploadProduct = (props) => {
 
     const token = localStorage.getItem("token");
     try {
-      const response = await axios.post(url + "/product", dataProduct, {
+      await axios.post(url + "/product", dataProduct, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",
@@ -75,23 +75,29 @@ export const getCart = (props) => {
   };
 };
 
-export const addToCart = (id, qty) => {
-  return async (dispatch, getState) => {
+export const addToCart = (id) => {
+  //   alert(id);
+  return async (dispatch) => {
     const bodyRequest = {
       product_id: id,
-      qty: 2,
+      qty: 1,
+      shipping_method_id: 1,
+      payment_method_id: 1,
     };
+    const token = localStorage.getItem("token");
     const myJSON = JSON.stringify(bodyRequest);
     try {
-      const response = await axios.post(url + "/register", myJSON, {
+      await axios.post(url + "/transaction", myJSON, {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
           Accept: "application/json; charset=utf-8",
+          Authorization: `Bearer ${token}`,
         },
       });
-      dispatch({ type: "SUCCESS_REGISTER" });
+      //   dispatch({ type: "SUCCESS_ADD_CART" });
     } catch (error) {
       console.log(error);
     }
   };
+  //   return false;
 };
