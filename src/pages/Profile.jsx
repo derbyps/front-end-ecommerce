@@ -1,10 +1,32 @@
 import React, { Component } from "react";
 import Biodata from "../components/Biodata";
+import Navigator from "../components/Header";
+import { doLogout } from "../store/action/userAction";
+import { connect } from "react-redux";
 
 class Profile extends Component {
   render() {
-    return <Biodata />;
+    return (
+      <div>
+        <Navigator doLogout={this.props.doLogout} {...this.props} />
+        <div className="card-bio">
+          <Biodata />
+        </div>
+      </div>
+    );
   }
 }
 
-export default Profile;
+const mapStateToProps = (state) => {
+  return {
+    username: state.user.username,
+    password: state.user.password,
+    login: state.user.is_login,
+    category: state.product.listCategory,
+  };
+};
+
+const mapDispatchToProps = {
+  doLogout,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

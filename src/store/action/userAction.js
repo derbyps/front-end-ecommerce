@@ -34,31 +34,31 @@ export const doLogin = (props) => {
   };
 };
 
-// export const doRegister = (props) => {
-//   return async (dispatch, getState) => {
-//     const bodyRequest = {
-//       full_name: getState().user.full_name,
-//       username: getState().user.username,
-//       password: getState().user.password,
-//       email: getState().user.email,
-//       address: getState().user.address,
-//       city: getState().user.city,
-//       telephone: getState().user.telephone,
-//     };
-//     const myJSON = JSON.stringify(bodyRequest);
-//     try {
-//       const response = await axios.post(url + "/register", myJSON, {
-//         headers: {
-//           "Content-Type": "application/json; charset=utf-8",
-//           Accept: "application/json; charset=utf-8",
-//         },
-//       });
-//       dispatch({ type: "SUCCESS_REGISTER" });
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-// };
+export const doRegister = (props) => {
+  return async (dispatch, getState) => {
+    const bodyRequest = {
+      full_name: getState().user.full_name,
+      username: getState().user.username,
+      password: getState().user.password,
+      email: getState().user.email,
+      address: getState().user.address,
+      city: getState().user.city,
+      telephone: getState().user.telephone,
+    };
+    const myJSON = JSON.stringify(bodyRequest);
+    try {
+      const response = await axios.post(url + "/register", myJSON, {
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          Accept: "application/json; charset=utf-8",
+        },
+      });
+      dispatch({ type: "SUCCESS_REGISTER" });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
 
 export const changeInputUser = (el) => {
   return { type: "CHANGE_INPUT_USER", payload: el };

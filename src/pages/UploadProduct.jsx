@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { changeInputUser, doRegister } from "../store/action/userAction";
+import { changeInputUser } from "../store/action/userAction";
+import { changeFileUser, uploadProduct } from "../store/action/productAction";
 
-class Register extends Component {
-  postRegister = async () => {
-    await this.props.doRegister();
+class UploadProduct extends Component {
+  postProduct = async (e) => {
+    e.preventDefault();
+    await this.props.uploadProduct();
     const is_login = this.props.login;
     if (!is_login) {
       this.props.history.push("/");
     }
   };
+  //   () => this.postProduct()
+
   render() {
     return (
       <div className="bg-all">
@@ -34,87 +38,97 @@ class Register extends Component {
               </div>
               <div className="col-lg-6 d-flex align-items-center">
                 <div class="card-body">
-                  <form onSubmit={(e) => e.preventDefault()}>
+                  <form onSubmit={this.postProduct}>
                     <div className="text-center">
                       <h2>Register</h2>
                     </div>
                     <div class="form-group">
-                      <label for="fullname">Full Name</label>
+                      <label for="exampleFormControlFile1">Image</label>
+                      <input
+                        type="file"
+                        name="url_image"
+                        class="form-control-file"
+                        id="exampleFormControlFile1"
+                        onChange={(e) => this.props.changeFile(e)}
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="name">Product Name</label>
                       <input
                         type="text"
-                        name="full_name"
+                        name="name"
                         class="form-control"
-                        id="fullname"
+                        id="name"
                         onChange={(e) => this.props.changeInput(e)}
                       />
                     </div>
                     <div class="form-group">
-                      <label for="username">Username</label>
+                      <label for="description">Product Description</label>
                       <input
                         type="text"
-                        name="username"
+                        name="description"
                         class="form-control"
-                        id="username"
+                        id="description"
                         onChange={(e) => this.props.changeInput(e)}
                       />
                     </div>
                     <div class="form-group">
-                      <label for="email">Email</label>
+                      <label for="price">Price</label>
                       <input
                         type="text"
-                        name="email"
+                        name="price"
                         class="form-control"
-                        id="email"
+                        id="price"
                         onChange={(e) => this.props.changeInput(e)}
                       />
                     </div>
                     <div class="form-group">
-                      <label for="password">Password</label>
+                      <label for="weight">Weight</label>
                       <input
                         type="text"
-                        name="password"
+                        name="weight"
                         class="form-control"
-                        id="password"
+                        id="weight"
                         onChange={(e) => this.props.changeInput(e)}
                       />
                     </div>
                     <div class="form-group">
-                      <label for="address">Address</label>
+                      <label for="size">Size</label>
                       <input
                         type="text"
-                        name="address"
+                        name="size"
                         class="form-control"
-                        id="address"
+                        id="size"
                         onChange={(e) => this.props.changeInput(e)}
                       />
                     </div>
                     <div class="form-group">
-                      <label for="city">City</label>
+                      <label for="stock">Stock</label>
                       <input
                         type="text"
-                        name="city"
+                        name="stock"
                         class="form-control"
-                        id="city"
+                        id="stock"
                         onChange={(e) => this.props.changeInput(e)}
                       />
                     </div>
                     <div class="form-group">
-                      <label for="telephone">Telephone</label>
+                      <label for="category_id">Category</label>
                       <input
                         type="text"
-                        name="telephone"
+                        name="category_id"
                         class="form-control"
-                        id="telephone"
+                        id="category_id"
                         onChange={(e) => this.props.changeInput(e)}
                       />
                     </div>
                     <div className="text-center">
                       <button
                         type="submit"
-                        onClick={() => this.postRegister()}
+                        // onClick={() => this.postProduct()}
                         class="btn btn-primary"
                       >
-                        Register
+                        Upload
                       </button>
                       <p class="card-text">
                         <small class="text-muted">
@@ -142,8 +156,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   changeInput: (e) => changeInputUser(e),
-  doRegister,
+  changeFile: (e) => changeFileUser(e),
+  uploadProduct,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Register);
-// export default Register;
+export default connect(mapStateToProps, mapDispatchToProps)(UploadProduct);

@@ -16,7 +16,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Navigator doLogout={this.props.doLogout} />
+        <Navigator doLogout={this.props.doLogout} {...this.props} />
         <Jumbotron />
         <div className="container my-5">
           <div className="row text-center border border-white bg-light  shadow rounded-pill ">
@@ -45,7 +45,7 @@ class Home extends Component {
               <Carousel />
             </div>
             <div className="col-lg-6 d-flex align-content-center flex-wrap">
-              <h1> WHY US?</h1>
+              <h2> WHY US?</h2>
               <span style={{ fontSize: "20px" }}>
                 Flower Shop merupakan toko bunga online yang menjual bunga
                 dengan kualitas terjamin namun harga terjangkau.

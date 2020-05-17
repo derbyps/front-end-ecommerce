@@ -1,5 +1,7 @@
 const initialState = {
   listCategory: [],
+  listProduct: [],
+  listCart: [],
 };
 
 export default function productReducer(state = initialState, action) {
@@ -8,6 +10,29 @@ export default function productReducer(state = initialState, action) {
       return {
         ...state,
         listCategory: action.payload,
+      };
+
+    case "SUCCESS_GET_PRODUCT":
+      return {
+        ...state,
+        listProduct: action.payload,
+      };
+
+    case "SUCCESS_GET_CART":
+      return {
+        ...state,
+        listCart: action.payload,
+      };
+
+    case "CHANGE_FILE_USER":
+      return {
+        ...state,
+        [action.payload.target.name]: action.payload.target.files[0],
+      };
+
+    case "SUCCESS_UPLOAD_PRODUCT":
+      return {
+        ...state,
       };
 
     default:

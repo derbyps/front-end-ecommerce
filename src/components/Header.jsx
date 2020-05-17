@@ -6,15 +6,15 @@ const Navigator = (props, postSignout) => {
   const login = localStorage.getItem("is_login");
   postSignout = () => {
     props.doLogout();
-    if (!login) {
-      props.history.push("/");
-    }
+    // if (!login) {
+    props.history.push("/");
+    // }
   };
   return (
     <div className="fixed-top">
       <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
         <div className="container">
-          <a class="navbar-brand" href="">
+          <Link to="/" class="navbar-brand" href="">
             <img
               className="logo"
               src={require("../img/logo-flower.png")}
@@ -22,9 +22,8 @@ const Navigator = (props, postSignout) => {
               height="30"
               alt="logo"
             />
-            {/* Flower Shop */}
             Flower Shop
-          </a>
+          </Link>
           <button
             class="navbar-toggler"
             type="button"

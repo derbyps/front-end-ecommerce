@@ -1,10 +1,9 @@
 import React from "react";
 
 const Biodata = () => {
-  //   const bio = localStorage.getItem("bio");
-  const bio1 = JSON.parse(localStorage.getItem("bio"));
+  const dataUser = JSON.parse(localStorage.getItem("bio"));
   return (
-    <div>
+    <div className="container d-flex justify-content-center mt-5">
       <div class="col-md-4 mt-4">
         <div class="card profile-card-5">
           <div class="card-img-block">
@@ -15,11 +14,14 @@ const Biodata = () => {
             />
           </div>
           <div class="card-body pt-0">
-            <h5 class="card-title">Florence Garza</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <h5 class="card-title">@{dataUser.username}</h5>
+            <hr />
+            <h5>Personal Info</h5>
+            <p class="card-text">Full name : {dataUser.full_name}</p>
+            <p class="card-text">email : {dataUser.email}</p>
+            <p class="card-text">Address : {dataUser.address}</p>
+            <p class="card-text">City : {dataUser.address}</p>
+            <p class="card-text">Telphone : {dataUser.telephone}</p>
           </div>
         </div>
         <p class="mt-3 w-100 float-left text-center">
