@@ -18,7 +18,6 @@ export const getProduct = (props) => {
     try {
       const response = await axios.get(url + "/product/list");
       dispatch({ type: "SUCCESS_GET_PRODUCT", payload: response.data });
-      //   console.log("id category", response.data);
     } catch (error) {
       console.log(error);
     }
@@ -68,7 +67,6 @@ export const getCart = (props) => {
         },
       });
       dispatch({ type: "SUCCESS_GET_CART", payload: response.data });
-      //   console.log("id category", response.data);
     } catch (error) {
       console.log(error);
     }
@@ -94,10 +92,59 @@ export const addToCart = (id) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      //   dispatch({ type: "SUCCESS_ADD_CART" });
     } catch (error) {
       console.log(error);
     }
   };
-  //   return false;
+};
+
+export const deleteCart = (id) => {
+  return async (dispatch) => {
+    const token = localStorage.getItem("token");
+    try {
+      await axios.delete(url + "/transaction/" + id, {
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const getDetailProduct = (id) => {
+  return async (dispatch) => {
+    const token = localStorage.getItem("token");
+    try {
+      const response = await axios.get(url + "/product/" + id, {
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          Accept: "application/json; charset=utf-8",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      dispatch({
+        type: "GET_PRODUCT_DETAIL",
+        payload: response.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const getProductCategory = (id) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.get(url + "/product/category/" + id);
+      dispatch({
+        type: "SUCCESS_GET_PRODUCT_BY_CATEGORY",
+        payload: response.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 };

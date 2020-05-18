@@ -26,7 +26,6 @@ export const doLogin = (props) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      //   dispatch({ type: "SUCCESS_GET_PROFILE", payload: bio.data });
       localStorage.setItem("bio", JSON.stringify(bio.data));
     } catch (error) {
       console.log(error);

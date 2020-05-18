@@ -43,6 +43,13 @@ const Navigator = (props, postSignout) => {
             {login ? (
               <ul class="navbar-nav">
                 <li className="mr-3">
+                  <Link to="/me/cart">
+                    <button type="button" class="btn btn-outline-success">
+                      Cart
+                    </button>
+                  </Link>
+                </li>
+                <li className="mr-3">
                   <button
                     type="button"
                     onClick={() => postSignout()}

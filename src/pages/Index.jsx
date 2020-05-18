@@ -63,7 +63,9 @@ class Home extends Component {
         <div className="container mt-5">
           <div className="row d-flex justify-content-center">
             {this.props.category.map((el) => {
-              return <CategoryCard title={el.name} id={el.id} />;
+              return (
+                <CategoryCard title={el.name} id={el.id} imgURL={el.imgURL} />
+              );
             })}
           </div>
         </div>

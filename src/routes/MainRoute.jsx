@@ -5,13 +5,11 @@ import SignIn from "../pages/SignIn";
 import Register from "../pages/Register";
 import Product from "../pages/Product";
 import Cart from "../pages/Cart";
-// import DetailProduct from "../pages/DetailProduct";
+import DetailProduct from "../pages/DetailProduct";
 import Profile from "../pages/Profile";
 import UploadProduct from "../pages/UploadProduct";
 import { Provider } from "react-redux";
 import store from "../store/index";
-// import Profile from "../pages/profile";
-// import News from "../pages/news";
 
 const MainRoutes = () => {
   return (
@@ -25,8 +23,8 @@ const MainRoutes = () => {
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/me/cart" component={Cart} />
           <Route exact path="/signin" component={SignIn} />
+          <Route exact path="/product/:id" component={DetailProduct} />
           <Route exact path="/category/:id" component={Product} />
-          {/* <Route excat path="/profile" component={Profile} /> */}
           {/* <Route component={NotMatch} /> */}
         </Switch>
       </BrowserRouter>

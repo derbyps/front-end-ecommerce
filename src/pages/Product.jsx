@@ -5,13 +5,22 @@ import Tabs from "../components/Tabs";
 import ProductCard from "../components/ProductCard";
 import Footer from "../components/Footer";
 import { doLogout } from "../store/action/userAction";
-import { getProduct, addToCart } from "../store/action/productAction";
+import {
+  getProduct,
+  addToCart,
+  getDetailProduct,
+} from "../store/action/productAction";
 import { connect } from "react-redux";
 
 class Product extends Component {
   componentDidMount() {
     this.props.getProduct();
   }
+
+  handleRequestDetailProduct = async (id) => {
+    await this.props.history.replace("/product/" + id);
+    this.props.getDetailProduct(id);
+  };
   render() {
     return (
       <div>
@@ -30,6 +39,8 @@ class Product extends Component {
               price={el.price}
               created_at={el.created_at}
               addCart={this.props.addCart}
+              urlImage={el.url_image}
+              getDetail={(id) => this.handleRequestDetailProduct(id)}
               {...this.props}
             />
           );
@@ -53,5 +64,6 @@ const mapDispatchToProps = {
   doLogout,
   getProduct,
   addCart: addToCart,
+  getDetailProduct,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Product);

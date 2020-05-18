@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Biodata = () => {
   const dataUser = JSON.parse(localStorage.getItem("bio"));
@@ -23,10 +24,14 @@ const Biodata = () => {
             <p class="card-text">City : {dataUser.address}</p>
             <p class="card-text">Telphone : {dataUser.telephone}</p>
           </div>
+          <div className="d-flex justify-content-center">
+            <Link to="/product/upload">
+              <button type="button" class="btn btn-outline-success">
+                Post Your Product
+              </button>
+            </Link>
+          </div>
         </div>
-        <p class="mt-3 w-100 float-left text-center">
-          <strong>Card with Floting Picture</strong>
-        </p>
       </div>
     </div>
     // </div>

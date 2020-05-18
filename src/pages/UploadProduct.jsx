@@ -23,7 +23,7 @@ class UploadProduct extends Component {
             height="100"
             alt="logo"
           />
-          <h3>Create Your account now</h3>
+          <h3>Upload Your Product Now</h3>
         </div>
         <div className="container d-flex justify-content-center mt-5 mb-5">
           <div class="card mb-3 shadow" style={{ maxWidth: "75%" }}>
@@ -32,15 +32,14 @@ class UploadProduct extends Component {
                 <h4>
                   We serve a variety of the most complete and reliable fresh
                   flower creations. explore various types of flowers that will
-                  make your moments more colorful. create an account and start
-                  shopping now!
+                  make your moments more colorful. start sell your product now!
                 </h4>
               </div>
               <div className="col-lg-6 d-flex align-items-center">
                 <div class="card-body">
                   <form onSubmit={this.postProduct}>
                     <div className="text-center">
-                      <h2>Register</h2>
+                      <h2>Upload</h2>
                     </div>
                     <div class="form-group">
                       <label for="exampleFormControlFile1">Image</label>
@@ -130,11 +129,6 @@ class UploadProduct extends Component {
                       >
                         Upload
                       </button>
-                      <p class="card-text">
-                        <small class="text-muted">
-                          Have an account? Login here.
-                        </small>
-                      </p>
                     </div>
                   </form>
                 </div>

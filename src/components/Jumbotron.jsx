@@ -1,5 +1,5 @@
 import React from "react";
-// import src from "*.bmp";
+import { Link } from "react-router-dom";
 
 const Jumbotron = () => {
   return (
@@ -12,9 +12,11 @@ const Jumbotron = () => {
           <p class="lead text-white">
             <strong>Toko Bunga Online Paling Terpercaya</strong>
           </p>
-          <button type="button" class="btn btn-success">
-            <span style={{ fontSize: "25px" }}>Lihat Katalog Kami</span>
-          </button>
+          <Link to="/product">
+            <button type="button" class="btn btn-success">
+              <span style={{ fontSize: "25px" }}>Lihat Katalog Kami</span>
+            </button>
+          </Link>
         </div>
       </div>
     </div>
