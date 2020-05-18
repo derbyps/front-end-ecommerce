@@ -26,6 +26,11 @@ class Cart extends Component {
             );
           })}
         </div>
+        <div className="d-flex justify-content-center">
+          <button type="button" class="btn btn-outline-success">
+            Checkout
+          </button>
+        </div>
       </div>
     );
   }
