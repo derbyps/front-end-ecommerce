@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://0.0.0.0:7070";
+const url = "http://54.251.16.100:7070";
 
 export const doLogin = (props) => {
   return async (dispatch, getState) => {

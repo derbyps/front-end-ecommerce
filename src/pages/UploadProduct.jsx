@@ -7,10 +7,10 @@ class UploadProduct extends Component {
   postProduct = async (e) => {
     e.preventDefault();
     await this.props.uploadProduct();
-    const is_login = this.props.login;
-    if (!is_login) {
-      this.props.history.push("/");
-    }
+    // const is_login = this.props.login;
+    // if (!is_login) {
+    this.props.history.push("/");
+    // }
   };
   //   () => this.postProduct()
 
