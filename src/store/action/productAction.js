@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://54.251.16.100:7070";
+const url = "https://cors-anywhere.herokuapp.com/https://flowerbe.derbyps.my.id";
 
 export const getCategory = (props) => {
   return async (dispatch) => {
