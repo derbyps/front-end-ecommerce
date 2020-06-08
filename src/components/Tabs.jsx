@@ -9,6 +9,7 @@ const Tabs = () => {
             class="nav-link active"
             id="home-tab"
             data-toggle="tab"
+            href="."
             role="tab"
             aria-controls="home"
             aria-selected="true"
@@ -22,6 +23,7 @@ const Tabs = () => {
             id="home-tab"
             data-toggle="tab"
             role="tab"
+            href="."
             aria-controls="home"
             aria-selected="false"
           >
@@ -34,6 +36,7 @@ const Tabs = () => {
             id="home-tab"
             data-toggle="tab"
             role="tab"
+            href="."
             aria-controls="home"
             aria-selected="false"
           >
@@ -46,6 +49,7 @@ const Tabs = () => {
             id="home-tab"
             data-toggle="tab"
             role="tab"
+            href="."
             aria-controls="home"
             aria-selected="false"
           >
@@ -58,6 +62,7 @@ const Tabs = () => {
             id="home-tab"
             data-toggle="tab"
             role="tab"
+            href="."
             aria-controls="home"
             aria-selected="false"
           >
@@ -70,6 +75,7 @@ const Tabs = () => {
             id="home-tab"
             data-toggle="tab"
             role="tab"
+            href="."
             aria-controls="home"
             aria-selected="false"
           >
