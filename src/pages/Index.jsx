@@ -45,7 +45,7 @@ class Home extends Component {
               <Carousel />
             </div>
             <div className="col-lg-6 d-flex align-content-center flex-wrap">
-              <h2> WHY US?</h2>
+              <h2>KENAPA KITA?</h2>
               <span style={{ fontSize: "20px" }}>
                 Flower Shop merupakan toko bunga online yang menjual bunga
                 dengan kualitas terjamin namun harga terjangkau.
