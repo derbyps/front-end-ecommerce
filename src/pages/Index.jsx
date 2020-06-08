@@ -52,9 +52,6 @@ class Home extends Component {
                 <br />
                 Kami siap memberikan pelayan yang prima dan memuaskan untuk
                 setiap pelanggan kami.
-                <br />
-                Buat momen bersama orang spesial anda semakin spesial dengan
-                bunga dari kami!
               </span>
             </div>
           </div>
