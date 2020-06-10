@@ -13,7 +13,10 @@ const CategoryCard = (props) => {
           alt="..."
         />
         <div class="card-body text-center">
-          <Link to={"/category/" + id}>
+          <Link
+            // to={"product/category/" + id}
+            onClick={() => props.handleRouter(id)}
+          >
             <p class="card-text">{title}</p>
           </Link>
         </div>

@@ -9,6 +9,13 @@ class Cart extends Component {
   componentDidMount() {
     this.props.getCart();
   }
+
+  deleteData = async (id) => {
+    await this.props.deleteCart(id);
+    await this.props.history.replace("/me/cart");
+    await this.props.getCart();
+  };
+
   render() {
     return (
       <div>
@@ -21,7 +28,7 @@ class Cart extends Component {
                 qty={el.qty}
                 price={el.price}
                 id={el.id}
-                deleteCart={this.props.deleteCart}
+                deleteCart={this.deleteData}
               />
             );
           })}

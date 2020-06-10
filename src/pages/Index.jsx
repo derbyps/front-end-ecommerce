@@ -5,13 +5,21 @@ import Carousel from "../components/Carousel";
 import CategoryCard from "../components/CategoryCard";
 import Footer from "../components/Footer";
 import { doLogout } from "../store/action/userAction";
-import { getCategory } from "../store/action/productAction";
+import {
+  getCategory,
+  getProductByCategory,
+} from "../store/action/productAction";
 import { connect } from "react-redux";
 
 class Home extends Component {
   componentDidMount() {
     this.props.getCategory();
   }
+
+  handleRequestCategoryProduct = async (id) => {
+    await this.props.history.replace("/product/category/" + id);
+    this.props.getProductByCategory(id);
+  };
 
   render() {
     return (
@@ -62,7 +70,12 @@ class Home extends Component {
           <div className="row d-flex justify-content-center">
             {this.props.category.map((el) => {
               return (
-                <CategoryCard title={el.name} id={el.id} imgURL={el.imgURL} />
+                <CategoryCard
+                  title={el.name}
+                  id={el.id}
+                  imgURL={el.imgURL}
+                  handleRouter={(id) => this.handleRequestCategoryProduct(id)}
+                />
               );
             })}
           </div>
@@ -84,6 +97,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   doLogout,
   getCategory,
+  getProductByCategory,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 // export default Home;

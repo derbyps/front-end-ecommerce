@@ -9,13 +9,23 @@ import {
   getProduct,
   addToCart,
   getDetailProduct,
+  getProductByCategory,
+  getCategory,
 } from "../store/action/productAction";
 import { connect } from "react-redux";
 
 class Product extends Component {
   componentDidMount() {
-    this.props.getProduct();
+    this.props.match.params.id
+      ? this.props.getProductByCategory(this.props.match.params.id)
+      : this.props.getProduct();
+    this.props.getCategory();
   }
+
+  handleRequestCategoryProduct = async (id) => {
+    await this.props.history.replace("/product/category/" + id);
+    this.props.getProductByCategory(id);
+  };
 
   handleRequestDetailProduct = async (id) => {
     await this.props.history.replace("/product/" + id);
@@ -28,7 +38,19 @@ class Product extends Component {
         <div className="container">
           <Carousel />
         </div>
-        <Tabs />
+        <div className=" container mt-3 mb-2">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            {this.props.category.map((el) => {
+              return (
+                <Tabs
+                  title={el.name}
+                  id={el.id}
+                  handleRouter={(id) => this.handleRequestCategoryProduct(id)}
+                />
+              );
+            })}
+          </ul>
+        </div>
         {this.props.product.map((el) => {
           return (
             <ProductCard
@@ -41,7 +63,7 @@ class Product extends Component {
               addCart={this.props.addCart}
               urlImage={el.url_image}
               getDetail={(id) => this.handleRequestDetailProduct(id)}
-              {...this.props}
+              // {...this.props}
             />
           );
         })}
@@ -53,6 +75,7 @@ class Product extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    category: state.product.listCategory,
     username: state.user.username,
     password: state.user.password,
     login: state.user.is_login,
@@ -65,5 +88,7 @@ const mapDispatchToProps = {
   getProduct,
   addCart: addToCart,
   getDetailProduct,
+  getProductByCategory,
+  getCategory,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Product);

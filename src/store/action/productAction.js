@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const url = "https://cors-anywhere.herokuapp.com/https://flowerbe.derbyps.my.id";
+const url =
+  "https://cors-anywhere.herokuapp.com/https://flowerbe.derbyps.my.id";
 
 export const getCategory = (props) => {
   return async (dispatch) => {
@@ -135,16 +136,25 @@ export const getDetailProduct = (id) => {
   };
 };
 
-export const getProductCategory = (id) => {
+export const getProductByCategory = (id) => {
+  // console.log("ini category =>", category);
   return async (dispatch) => {
-    try {
-      const response = await axios.get(url + "/product/category/" + id);
-      dispatch({
-        type: "SUCCESS_GET_PRODUCT_BY_CATEGORY",
-        payload: response.data,
-      });
-    } catch (error) {
-      console.log(error);
-    }
+    // await dispatch({
+    //   type: "SET_CATEGORY",
+    //   payload: category,
+    // });
+
+    const productList = await axios.get(url + "/product/list");
+    const dataFiltered = await productList.data.filter(
+      (elem) => elem.category_id === parseInt(id)
+      // console.log("cek", elem.category_id)
+    );
+    console.log("cek data", id);
+    await dispatch({
+      type: "SET_PRODUCT_BY_CATEGORY",
+      payload: dataFiltered,
+    });
+
+    // console.log("ini setelah dispasa", movielist.data.movies);
   };
 };

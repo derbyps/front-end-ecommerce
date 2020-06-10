@@ -24,7 +24,7 @@ const MainRoutes = () => {
           <Route exact path="/me/cart" component={Cart} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/product/:id" component={DetailProduct} />
-          <Route exact path="/category/:id" component={Product} />
+          <Route exact path="/product/category/:id" component={Product} />
           {/* <Route component={NotMatch} /> */}
         </Switch>
       </BrowserRouter>

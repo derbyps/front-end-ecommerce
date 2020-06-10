@@ -24,10 +24,15 @@ const Biodata = () => {
             <p class="card-text">City : {dataUser.address}</p>
             <p class="card-text">Telphone : {dataUser.telephone}</p>
           </div>
-          <div className="d-flex justify-content-center">
+          <div className="d-flex justify-content-center pb-3">
             <Link to="/product/upload">
-              <button type="button" class="btn btn-outline-success">
+              <button type="button" class="btn btn-outline-success mr-1">
                 Post Your Product
+              </button>
+            </Link>
+            <Link to="/">
+              <button type="button" class="btn btn-outline-success ml-1">
+                Manage Product
               </button>
             </Link>
           </div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Biodata from "../components/Biodata";
 import Navigator from "../components/Header";
+import Footer from "../components/Footer";
 import { doLogout } from "../store/action/userAction";
 import { connect } from "react-redux";
 
@@ -11,6 +12,7 @@ class Profile extends Component {
         <Navigator doLogout={this.props.doLogout} {...this.props} />
         <div className="card-bio">
           <Biodata />
+          <Footer />
         </div>
       </div>
     );

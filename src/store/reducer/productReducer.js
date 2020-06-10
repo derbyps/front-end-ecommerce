@@ -19,7 +19,7 @@ export default function productReducer(state = initialState, action) {
         listProduct: action.payload,
       };
 
-    case "SUCCESS_GET_PRODUCT_BY_CATEGORY":
+    case "SET_PRODUCT_BY_CATEGORY":
       return {
         ...state,
         listProduct: action.payload,
