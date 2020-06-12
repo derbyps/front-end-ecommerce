@@ -51,22 +51,24 @@ class Product extends Component {
             })}
           </ul>
         </div>
-        {this.props.product.map((el) => {
-          return (
-            <ProductCard
-              id={el.id}
-              title={el.name}
-              category={el.cat_detail}
-              description={el.description}
-              price={el.price}
-              created_at={el.created_at}
-              addCart={this.props.addCart}
-              urlImage={el.url_image}
-              getDetail={(id) => this.handleRequestDetailProduct(id)}
-              // {...this.props}
-            />
-          );
-        })}
+        <div class="container card-columns">
+          {this.props.product.map((el) => {
+            return (
+              <ProductCard
+                id={el.id}
+                title={el.name}
+                category={el.cat_detail}
+                description={el.description}
+                price={el.price}
+                created_at={el.created_at}
+                addCart={this.props.addCart}
+                urlImage={el.url_image}
+                getDetail={(id) => this.handleRequestDetailProduct(id)}
+                // {...this.props}
+              />
+            );
+          })}
+        </div>
         <Footer />
       </div>
     );
