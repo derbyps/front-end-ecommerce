@@ -35,7 +35,7 @@ class Product extends Component {
     return (
       <div>
         <Navigator doLogout={this.props.doLogout} {...this.props} />
-        <div className="container">
+        <div className="container top-m">
           <Carousel />
         </div>
         <div className=" container mt-3 mb-2">

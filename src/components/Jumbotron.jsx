@@ -7,14 +7,14 @@ const Jumbotron = () => {
       <div class="jumbotron jumbotron-fluid bg-jumbotron mt-5">
         <div class="container text-center">
           <h1 class="display-4 text-white">
-            <strong>Selamat Datang di Flower Shop</strong>
+            <strong>Welcome to Flower Shop</strong>
           </h1>
           <p class="lead text-white">
-            <strong>Toko Bunga Online Paling Terpercaya</strong>
+            <strong>#1 Flower Marketplace in Indonesia</strong>
           </p>
           <Link to="/product">
             <button type="button" class="btn btn-success">
-              <span style={{ fontSize: "25px" }}>Lihat Katalog Kami</span>
+              <span style={{ fontSize: "25px" }}>See Our Catalog</span>
             </button>
           </Link>
         </div>

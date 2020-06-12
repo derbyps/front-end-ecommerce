@@ -5,22 +5,19 @@ const CategoryCard = (props) => {
   const { title, id, imgURL } = props;
   return (
     <div class="col-sm mb-3 d-flex justify-content-center">
-      <div class="card" style={{ width: "18rem" }}>
-        <img
-          src={imgURL}
-          class="card-img-top"
-          style={{ maxHeight: "13rem" }}
-          alt="..."
-        />
-        <div class="card-body text-center">
-          <Link
-            // to={"product/category/" + id}
-            onClick={() => props.handleRouter(id)}
-          >
+      <Link onClick={() => props.handleRouter(id)}>
+        <div class="card shadow" style={{ width: "18rem" }}>
+          <img
+            src={imgURL}
+            class="card-img-top"
+            style={{ maxHeight: "15rem" }}
+            alt="..."
+          />
+          <div class="card-body text-center">
             <p class="card-text">{title}</p>
-          </Link>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };

@@ -30,19 +30,19 @@ class Home extends Component {
           <div className="row text-center border border-white bg-light  shadow rounded-pill ">
             <div className="col-3 pt-3 align-content-center flex-wrap">
               <i style={{ fontSize: "50px" }} class="fas fa-check-circle"></i>
-              <p>Kualitas Terjamin</p>
+              <p>Best Quality</p>
             </div>
             <div className="col-3 pt-3 align-content-center flex-wrap">
               <i style={{ fontSize: "50px" }} class="fas fa-shipping-fast"></i>
-              <p>Kirim Seluruh Indonesia</p>
+              <p>All Over Indonesia</p>
             </div>
             <div className="col-3 pt-3 align-content-center flex-wrap">
               <i style={{ fontSize: "50px" }} class="fas fa-medal"></i>
-              <p>Toko Terpercaya</p>
+              <p>Trusted Shop</p>
             </div>
             <div className="col-3 pt-3 align-content-center flex-wrap">
               <i style={{ fontSize: "50px" }} class="fas fa-bolt"></i>
-              <p>Proses Cepat</p>
+              <p>Fast Process</p>
             </div>
           </div>
         </div>
@@ -53,13 +53,17 @@ class Home extends Component {
               <Carousel />
             </div>
             <div className="col-lg-6 d-flex align-content-center flex-wrap">
-              <h2>KENAPA KITA?</h2>
+              <h2>WHY US?</h2>
               <span style={{ fontSize: "20px" }}>
-                Flower Shop merupakan toko bunga online yang menjual bunga
-                dengan kualitas terjamin namun harga terjangkau.
+                Flower Shop is the #1 flower delivery in Indonesia. We sells
+                high quality flower with low price, delivery specially crafted
+                flower bouquets and gift boxes to your loved one all around
+                Indonesia.
                 <br />
-                Kami siap memberikan pelayan yang prima dan memuaskan untuk
-                setiap pelanggan kami.
+                We ready to gives best service and satisfy our customers.
+                <br />
+                Show your love and appreciation by sending fresh flowers to your
+                loved ones.
               </span>
             </div>
           </div>
