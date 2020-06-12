@@ -71,7 +71,7 @@ class Register extends Component {
                     <div class="form-group">
                       <label for="password">Password</label>
                       <input
-                        type="text"
+                        type="password"
                         name="password"
                         class="form-control"
                         id="password"
