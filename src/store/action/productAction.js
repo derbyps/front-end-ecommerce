@@ -115,6 +115,22 @@ export const deleteCart = (id) => {
   };
 };
 
+export const doCheckout = () => {
+  return async (dispatch) => {
+    const token = localStorage.getItem("token");
+    try {
+      await axios.delete(url + "/detail", {
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 export const getDetailProduct = (id) => {
   return async (dispatch) => {
     const token = localStorage.getItem("token");
