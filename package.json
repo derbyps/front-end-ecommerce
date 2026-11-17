@@ -7,7 +7,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.34.0",
-    "moment": "^2.25.3",
+    "moment": "^2.31.0",
     "numeral": "^2.0.6",
     "react": "^16.13.1",
     "react-blink-text": "^1.0.3",
